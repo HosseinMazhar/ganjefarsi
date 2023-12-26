@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import connectMongoDB from "../../../../libs/mongodb";
-import student from "../../../../models/student";
+import user from "../../../../models/users";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -12,33 +12,41 @@ export async function POST(req: Request) {
   }
   await connectMongoDB();
   try {
-    const isStudentfounded = await student
+    const isUserfounded = await user
       .findOne({ email })
       .select("+password");
-    if (!isStudentfounded) {
+    if (!isUserfounded) {
       return NextResponse.json(
         { msg: "User is not available" },
         { status: 409 }
       );
     }
-    const validPassword = await bcrypt.compare(password, isStudentfounded.password);
+    const validPassword = await bcrypt.compare(
+      password,
+      isUserfounded.password
+    );
     if (!validPassword) {
       return new Response("Incorrect Password", { status: 400 });
     }
 
     const tokenData = {
-      fullName: isStudentfounded.fullName,
-      id: isStudentfounded._id,
+      fullName: isUserfounded.fullName,
+      id: isUserfounded._id,
     };
-    const token = jwt.sign(tokenData, process.env.JWT_SECRETKEY ?? "", {
-      expiresIn: "1h",
-    });
-    if(!token) {
-      return new Response("empty token")
+
+    if (process.env.JWT_SECRETKEY) {
+      const token = jwt.sign(tokenData, process.env.JWT_SECRETKEY, {
+        expiresIn: "2h",
+      });
+      if (!token) {
+        return new Response("empty token");
+      }
+      const response = NextResponse.json({ message: "Login successfull" });
+      response.cookies.set("token", token, { httpOnly: true });
+      return response;
+    } else {
+      return NextResponse.json({ msg: "invalid JWT Key" }, { status: 400 });
     }
-    const response = NextResponse.json({ message: "Login successfull" });
-    response.cookies.set("token", token, { httpOnly: true });
-    return response;
   } catch (err) {
     console.log(err);
     return NextResponse.json({ error: err, success: false }, { status: 500 });
