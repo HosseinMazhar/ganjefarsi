@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const studentSchema = new Schema({
+const userSchema = new Schema({
   fullName: {
     type: String,
     required: [true, "Full Name is Required"],
@@ -12,13 +12,25 @@ const studentSchema = new Schema({
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       "Invalid email address",
     ],
+    unique: true
   },
   password: {
     type: String,
     required: [true, "Password is required"],
-  }
+  },
+  grade: {
+    type: Number,
+  },
+  classNumber: {
+    type: Number
+  },
+  role: {
+    type: String,
+    enum: ['admin', 'user'],
+    default: 'user',
+  },
 });
 
-const student =
-  mongoose.models.student || mongoose.model("student", studentSchema);
-export default student;
+const user =
+  mongoose.models.user || mongoose.model("user", userSchema);
+export default user;
