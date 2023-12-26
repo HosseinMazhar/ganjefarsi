@@ -42,7 +42,7 @@ export async function POST(req: Request) {
         return new Response("empty token");
       }
       const response = NextResponse.json({ message: "Login successfull" });
-      response.cookies.set("token", token, { httpOnly: true });
+      response.cookies.set("token", token, { httpOnly: false });
       return response;
     } else {
       return NextResponse.json({ msg: "invalid JWT Key" }, { status: 400 });
