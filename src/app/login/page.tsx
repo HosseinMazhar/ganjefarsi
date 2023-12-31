@@ -1,4 +1,6 @@
-"use client"
-export default function LoginPage(){
-    return <h1>hello</h1>
+import LoginPage from "@/components/LoginPage"
+export default function Login(){
+    return (
+        <LoginPage/>
+    )
 }

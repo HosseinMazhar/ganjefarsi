@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: vazir;
+    src: url(../../public/fonts/Vazir-FD-WOL.ttf);
+}
+
+.font-family-vazir {
+    font-family: vazir;
+}
+
+.persian-input {
+    text-align: right;
+}
+
+.persian-input>label {
+    padding-bottom: 6px;
+    padding-right: 0px;
+}
+
+.persian-input>div>input {
+    font-family: vazir sans-serif;
+}
