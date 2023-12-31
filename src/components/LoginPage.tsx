@@ -29,7 +29,7 @@ export default function LoginPage() {
         })} className="flex flex-col gap-3">
         <TextInput className="w-[250px] font-family-vazir persian-input" label=":ایمیل" {...form.getInputProps('email')}></TextInput>
         <PasswordInput className="w-[250px] font-family-vazir persian-input" label=":گذر واژه" {...form.getInputProps('password')}></PasswordInput>
-        <Button type="submit" className="mt-6 font-family-vazir">ورود</Button>
+        <button type="submit" className="mt-6 font-family-vazir bg-blue-600 py-2 rounded">ورود</button>
         </form>
         <Link href={"./signin"}><p className="font-family-vazir text-xs hover:text-blue-300">ثبت نام کنید</p></Link>
       </div>
