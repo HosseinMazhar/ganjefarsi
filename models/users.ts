@@ -18,12 +18,6 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Password is required"],
   },
-  grade: {
-    type: Number,
-  },
-  classNumber: {
-    type: Number
-  },
   role: {
     type: String,
     enum: ['admin', 'user'],
