@@ -1,7 +1,6 @@
 {
     "functions": {
         "src/app/api/login.js": {
-            "momemory": 3000,
             "maxDuration": 60
         }
     }
