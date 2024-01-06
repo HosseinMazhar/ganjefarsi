@@ -12,10 +12,10 @@ export async function POST(req: Request) {
   }
   await connectMongoDB();
   try {
-    const isUserfounded = await user
+    const Userfounded = await user
       .findOne({ email })
       .select("+password");
-    if (!isUserfounded) {
+    if (!Userfounded) {
       return NextResponse.json(
         { msg: "User is not available" },
         { status: 409 }
@@ -23,15 +23,16 @@ export async function POST(req: Request) {
     }
     const validPassword = await bcrypt.compare(
       password,
-      isUserfounded.password
+      Userfounded.password
     );
     if (!validPassword) {
       return new Response("Incorrect Password", { status: 400 });
     }
 
     const tokenData = {
-      fullName: isUserfounded.fullName,
-      id: isUserfounded._id,
+      id: Userfounded.id,
+      fullName: Userfounded.fullName,
+      role: Userfounded.role
     };
 
     if (process.env.JWT_SECRETKEY) {
