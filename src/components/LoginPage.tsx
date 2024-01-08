@@ -43,13 +43,13 @@ export default function LoginPage() {
           ></PasswordInput>
           <button
             type="submit"
-            className="mt-6 font-family-vazir bg-blue-600 py-2 rounded"
+            className="mt-6 font-family-vazir bg-blue-600 py-2 rounded hover:bg-blue-500"
           >
             ورود
           </button>
         </form>
         <Link href={"./signup"}>
-          <p className="font-family-vazir text-xs hover:text-blue-300 hover:bg-blue-500">
+          <p className="font-family-vazir text-xs hover:text-blue-300">
             ثبت نام کنید
           </p>
         </Link>
