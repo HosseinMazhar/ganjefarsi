@@ -6,8 +6,6 @@ import { useState } from 'react';
 import { Loader } from '@mantine/core';
 import { JwtPayload } from 'jwt-decode';
 import tokenDecode from '@/utils/tokenDecode';
-import UserDashboard from '@/components/UserDashboard';
-import AdminDashboard from '@/components/AdminDashboard';
 
 export interface tokenDataT extends JwtPayload {
   id: string,
@@ -19,14 +17,19 @@ export default function Home() {
   const router = useRouter()
   const [cookies] = useCookies();
   const [loading, setLoading] = useState(true);
-  const [userData, setUserData] = useState<tokenDataT | null>(null)
   useEffect(()=>{
     if(!cookies.token) {
       router.push('./login')
     } else {
       const tokenData = tokenDecode(cookies.token);
-      setUserData(tokenData)
       setLoading(false)
+      if (tokenData?.role === 'user') {
+        router.push('./adminDashboard');
+      }
+      if (tokenData?.role === 'admin') {
+        router.push('./userDashboard');
+      }
+
     }
   },[cookies])
   if (loading) {
@@ -35,12 +38,5 @@ export default function Home() {
         <Loader color='blue' size='xl'/>
       </main>
     )
-  } else {
-    if(userData?.role === "user") {
-      return <UserDashboard/>
-    }
-    if(userData?.role === "admin") {
-      return <AdminDashboard/>
-    }
   }
 }
