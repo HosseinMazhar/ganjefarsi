@@ -1,5 +1,5 @@
 "use client"
-import LoginPage from "@/components/LoginPage"
+import LoginPage from "@/components/login/LoginPage"
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/navigation';

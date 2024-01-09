@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "پیشخوان",
+    title: "پیشخوان ادمین",
     description: "درسنامه و آزمون ادبیات",
   };
   
