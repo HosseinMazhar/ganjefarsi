@@ -1,3 +1,4 @@
+import AdminDashboardNavbar from "@/components/adminDashboard/AdminDashboardNavbar";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "پیشخوان ادمین",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   }) {
     return (
         <>
-        <h1>admin navbar</h1>
+        <AdminDashboardNavbar/>
         {children}
         </>
     );

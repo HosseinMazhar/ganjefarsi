@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
+import UserDashboardNavbar from "@/components/userDashboard/UserDashboardNavbar";
 export const metadata: Metadata = {
-    title: " پیشخوان کاربر",
-    description: "درسنامه و آزمون ادبیات",
-  };
-  
-  export default function RootLayout({
-    children,
-  }: {
-    children: React.ReactNode;
-  }) {
-    return (
-        <>
-        <h1>user navbar</h1>
-        {children}
-        </>
-    );
-  }
+  title: " پیشخوان کاربر",
+  description: "درسنامه و آزمون ادبیات",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <UserDashboardNavbar />
+      {children}
+    </>
+  );
+}
