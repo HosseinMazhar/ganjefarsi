@@ -4,7 +4,6 @@ import "./globals.css";
 import '@mantine/core/styles.css';
 import { MyCookiesProvider } from "./context/CookiesProvider";
 import { MantineProvider } from "@mantine/core";
-import '@mantine/core/styles.css';
 
 const inter = Inter({ subsets: ["latin"] });
 

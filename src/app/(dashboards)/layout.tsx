@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Loader } from "@mantine/core";
 import { JwtPayload } from "jwt-decode";
+import '@mantine/core/styles.css';
 
 export interface tokenDataT extends JwtPayload {
   id: string;
