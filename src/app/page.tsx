@@ -24,10 +24,10 @@ export default function Home() {
       const tokenData = tokenDecode(cookies.token);
       setLoading(false)
       if (tokenData?.role === 'user') {
-        router.push('./adminDashboard');
+        router.push('./userDashboard');
       }
       if (tokenData?.role === 'admin') {
-        router.push('./userDashboard');
+        router.push('./adminDashboard');
       }
 
     }
