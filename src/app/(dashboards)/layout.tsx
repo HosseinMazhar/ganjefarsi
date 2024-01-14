@@ -23,7 +23,7 @@ export default function RootLayout({
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!cookies.token) {
-      router.push("./login");
+      router.push("/login");
     } else {
       setLoading(false);
     }
