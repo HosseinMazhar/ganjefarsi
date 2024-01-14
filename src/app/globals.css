@@ -23,3 +23,11 @@
 .persian-input>div>input {
     font-family: vazir sans-serif;
 }
+
+.persian-text-input>div>input, .persian-text-input>div>textarea {
+    text-align: right;
+}
+
+.persian-text-input>div>textarea {
+    height: 250px;
+}

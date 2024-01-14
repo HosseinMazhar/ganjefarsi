@@ -21,7 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <MyCookiesProvider>
-          <MantineProvider defaultColorScheme="dark">{children}</MantineProvider>
+          <MantineProvider defaultColorScheme="dark">
+            {children}
+          </MantineProvider>
         </MyCookiesProvider>
       </body>
     </html>
