@@ -21,7 +21,7 @@ export default function CreateLessonPage() {
   };
   return (
     <div className="w-screen h-[calc(100vh-60px)] flex justify-center items-center">
-      <div className="w-4/6 h-5/6 rounded-xl border-neutral-600 border bg-neutral-700">
+      <div className="w-4/6 h-fit py-9 rounded-xl border-neutral-600 border bg-neutral-700">
         <h1 className="font-family-vazir text-white bg font-extrabold text-center py-5 text-xl">
           طراحی درسنامه
         </h1>
