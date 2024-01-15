@@ -14,7 +14,9 @@ export default function AdminDashboardNavbar() {
         <Link href={"/adminDashboard/createLesson"}>
           <Button rightSection={<IconPlus size={20} />} className="font-family-vazir" color="blue">طراحی درسنامه</Button>
         </Link>
+        <Link href={"/adminDashboard/createExam"}>
         <Button rightSection={<IconPlus size={20} />} className="font-family-vazir" color="blue">طراحی آزمون</Button>
+        </Link>
         <Button rightSection={<IconEye size={20} />} className="font-family-vazir" color="blue">مشاهده پاسخنامه ها</Button>
       </div>
     </nav>
