@@ -20,9 +20,9 @@ export default function LessonsPage() {
   }, []);
   return (
     <main className="w-screen overflow-x-hidden flex flex-col">
-      {data?.map((index, key) => {
+      {data?.map((index) => {
         return (
-          <div className="px-36 overflow-x-hidden flex flex-col pt-5" key={key}>
+          <div className="px-36 overflow-x-hidden flex flex-col pt-5" key={index._id}>
             <div className="w-full font-family-vazir px-5 h-16 rounded-md bg-neutral-900 border-neutral-600 border flex justify-between items-center">
                 <Link href={"/userDashboard/lessons/"+index._id}>
                 <span className="text-sm">مطالعه کنید</span>

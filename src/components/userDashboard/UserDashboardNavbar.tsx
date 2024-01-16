@@ -27,13 +27,15 @@ export default function UserDashboardNavbar() {
             درسنامه ها
           </Button>
         </Link>
-        <Button
-          rightSection={<IconFileCheck size={20} />}
-          className="font-family-vazir"
-          color="blue"
-        >
-          آزمون ها
-        </Button>
+        <Link href={"/userDashboard/exams"}>
+          <Button
+            rightSection={<IconFileCheck size={20} />}
+            className="font-family-vazir"
+            color="blue"
+          >
+            آزمون ها
+          </Button>
+        </Link>
       </div>
     </nav>
   );
