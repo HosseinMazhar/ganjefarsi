@@ -1,7 +1,6 @@
-import AdminDashboardNavbar from "@/components/adminDashboard/AdminDashboardNavbar";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "پیشخوان ادمین",
+  title: "طراحی آزمون",
   description: "درسنامه و آزمون ادبیات",
 };
 
@@ -10,10 +9,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <AdminDashboardNavbar />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }
