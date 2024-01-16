@@ -22,7 +22,7 @@ export default function LessonsPage() {
     <main className="w-screen overflow-x-hidden flex flex-col">
       {data?.map((index, key) => {
         return (
-          <div className="px-36 overflow-x-hidden flex flex-col pt-5">
+          <div className="px-36 overflow-x-hidden flex flex-col pt-5" key={key}>
             <div className="w-full font-family-vazir px-5 h-16 rounded-md bg-neutral-900 border-neutral-600 border flex justify-between items-center">
                 <Link href={"/userDashboard/lessons/"+index._id}>
                 <span className="text-sm">مطالعه کنید</span>
